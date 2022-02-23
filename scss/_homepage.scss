@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  main {
+    top: 50%;
+    left: 50%;
+    min-width: 32.7rem;
+    max-width: 46rem;
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 3.2rem;
+      .x {
+        background-image: url("../assets/icon-x.svg");
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 3.2rem;
+        width: 3.2rem;
+      }
+      .zero {
+        background-image: url("../assets/icon-o.svg");
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 3.174rem;
+        width: 3.174rem;
+      }
+    }
+    .mark-picking-container {
+      background-color: $semi-dark-navy;
+      border-radius: 15px;
+      text-align: center;
+      padding: 2.4rem;
+      h4 {
+        color: $silver;
+        text-transform: uppercase;
+      }
+      .mark-picking-subcontainer {
+        width: 100%;
+        height: 7.2rem;
+        .picker {
+          position: relative;
+        }
+        input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+      }
+      p {
+        color: $silver;
+        opacity: 0.5;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -134,4 +134,91 @@ input::-webkit-inner-spin-button {
 .hide {
   display: none;
 }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+body main {
+  top: 50%;
+  left: 50%;
+  min-width: 32.7rem;
+  max-width: 46rem;
+}
+
+body main .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 3.2rem;
+}
+
+body main .logo .x {
+  background-image: url("../assets/icon-x.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+body main .logo .zero {
+  background-image: url("../assets/icon-o.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 3.174rem;
+  width: 3.174rem;
+}
+
+body main .mark-picking-container {
+  background-color: #1f3641;
+  border-radius: 15px;
+  text-align: center;
+  padding: 2.4rem;
+}
+
+body main .mark-picking-container h4 {
+  color: #a8bfc9;
+  text-transform: uppercase;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer {
+  width: 100%;
+  height: 7.2rem;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer .picker {
+  position: relative;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+body main .mark-picking-container p {
+  color: #a8bfc9;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
 /*# sourceMappingURL=styles.css.map */
