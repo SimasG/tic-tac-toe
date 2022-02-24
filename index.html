@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>Tic Tac Toe</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./scss/styles.css" />
@@ -26,15 +26,24 @@
       <section class="mark-picking-container">
         <h4>Pick player 1's mark</h4>
         <div class="mark-picking-subcontainer">
-          <label class="picker" for="mark-picker"></label>
-          <input type="checkbox" id="mark-picker" />
+          <label class="picker" for="mark-picker">
+            <input type="checkbox" id="mark-picker" />
+            <div class="picker-subcontainer">
+              <div class="picker-x">
+                <div class="x-icon"></div>
+              </div>
+              <div class="picker-zero">
+                <div class="zero-icon"></div>
+              </div>
+            </div>
+          </label>
         </div>
         <p>Remember: X goes first</p>
       </section>
 
       <section class="new-game-buttons">
-        <div class="cpu">New Game (vs CPU)</div>
-        <div class="multiplayer">New Game (vs player)</div>
+        <button class="button cpu">New Game (vs CPU)</button>
+        <button class="button multiplayer">New Game (vs player)</button>
       </section>
       <!-- New game menu end -->
 
@@ -57,7 +66,7 @@
       restart -->
 
       <!-- Game board end -->
-      <a href="html/game.html">New Game</a>
+      <!-- <a href="html/game.html">New Game</a> -->
     </main>
 
     <script src="app.js" async defer></script>

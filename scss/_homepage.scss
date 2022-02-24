@@ -38,26 +38,101 @@ body {
       border-radius: 15px;
       text-align: center;
       padding: 2.4rem;
+      box-shadow: 0 8px $very-dark-navy-shadow;
+      margin-bottom: 4rem;
       h4 {
         color: $silver;
         text-transform: uppercase;
+        margin-bottom: 2.4rem;
       }
       .mark-picking-subcontainer {
-        width: 100%;
-        height: 7.2rem;
         .picker {
           position: relative;
-        }
-        input {
-          opacity: 0;
-          width: 0;
-          height: 0;
+          display: inline-block;
+          width: 100%;
+          height: 7.2rem;
+          input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          .picker-subcontainer {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $dark-navy-background;
+            border-radius: 15px;
+            padding: 0.9rem 0.8rem;
+            display: flex;
+            .picker-x {
+              height: 5.4rem;
+              width: 13.2rem;
+              background-color: transparent;
+              border-radius: 10px;
+              left: 0;
+              .x-icon {
+                background-image: url("../assets/icon-x-silver.svg");
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 3.2rem;
+                width: 3.2rem;
+                margin: 0 auto;
+                top: 20%;
+              }
+            }
+            .picker-zero {
+              height: 5.4rem;
+              width: 13.2rem;
+              background-color: $silver;
+              border-radius: 10px;
+              left: 0;
+              .zero-icon {
+                background-image: url("../assets/icon-o-transparent.svg");
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 3.174rem;
+                width: 3.174rem;
+                margin: 0 auto;
+                top: 20%;
+              }
+            }
+          }
         }
       }
       p {
         color: $silver;
         opacity: 0.5;
         text-transform: uppercase;
+        margin-top: 1.8rem;
+      }
+    }
+    .new-game-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.4rem;
+      .button {
+        width: 100%;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        border-radius: 15px;
+        height: 5.6rem;
+      }
+      .cpu {
+        background-color: $light-yellow;
+        box-shadow: 0 8px #cc8c35;
+      }
+      .multiplayer {
+        background-color: $light-blue;
+        box-shadow: 0 8px #3b8d87;
       }
     }
   }

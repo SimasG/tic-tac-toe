@@ -194,31 +194,126 @@ body main .mark-picking-container {
   border-radius: 15px;
   text-align: center;
   padding: 2.4rem;
+  -webkit-box-shadow: 0 8px #10212a;
+          box-shadow: 0 8px #10212a;
+  margin-bottom: 4rem;
 }
 
 body main .mark-picking-container h4 {
   color: #a8bfc9;
   text-transform: uppercase;
-}
-
-body main .mark-picking-container .mark-picking-subcontainer {
-  width: 100%;
-  height: 7.2rem;
+  margin-bottom: 2.4rem;
 }
 
 body main .mark-picking-container .mark-picking-subcontainer .picker {
   position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 7.2rem;
 }
 
-body main .mark-picking-container .mark-picking-subcontainer input {
+body main .mark-picking-container .mark-picking-subcontainer .picker input {
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1a2a33;
+  border-radius: 15px;
+  padding: 0.9rem 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer .picker-x {
+  height: 5.4rem;
+  width: 13.2rem;
+  background-color: transparent;
+  border-radius: 10px;
+  left: 0;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer .picker-x .x-icon {
+  background-image: url("../assets/icon-x-silver.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 3.2rem;
+  width: 3.2rem;
+  margin: 0 auto;
+  top: 20%;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer .picker-zero {
+  height: 5.4rem;
+  width: 13.2rem;
+  background-color: #a8bfc9;
+  border-radius: 10px;
+  left: 0;
+}
+
+body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer .picker-zero .zero-icon {
+  background-image: url("../assets/icon-o-transparent.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 3.174rem;
+  width: 3.174rem;
+  margin: 0 auto;
+  top: 20%;
 }
 
 body main .mark-picking-container p {
   color: #a8bfc9;
   opacity: 0.5;
   text-transform: uppercase;
+  margin-top: 1.8rem;
+}
+
+body main .new-game-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.4rem;
+}
+
+body main .new-game-buttons .button {
+  width: 100%;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  border-radius: 15px;
+  height: 5.6rem;
+}
+
+body main .new-game-buttons .cpu {
+  background-color: #f2b137;
+  -webkit-box-shadow: 0 8px #cc8c35;
+          box-shadow: 0 8px #cc8c35;
+}
+
+body main .new-game-buttons .multiplayer {
+  background-color: #31c3bd;
+  -webkit-box-shadow: 0 8px #3b8d87;
+          box-shadow: 0 8px #3b8d87;
 }
 /*# sourceMappingURL=styles.css.map */
