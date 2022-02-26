@@ -334,4 +334,129 @@ body main .new-game-buttons .multiplayer {
     width: 19.8rem;
   }
 }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  min-height: 100vh;
+  padding: 2.4rem;
+}
+
+body header {
+  min-width: 32.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+body header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 3.2rem;
+}
+
+body header .logo .x {
+  background-image: url("../assets/icon-x.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+body header .logo .zero {
+  background-image: url("../assets/icon-o.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 3.174rem;
+  width: 3.174rem;
+}
+
+body header .turn {
+  height: 3.6rem;
+  width: 9.6rem;
+  background-color: #1f3641;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #a8bfc9;
+  -webkit-box-shadow: 0 4px #10212a;
+          box-shadow: 0 4px #10212a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+body header .turn p {
+  font-weight: bold;
+}
+
+body header .turn .x-silver {
+  background-image: url("../assets/icon-x-silver.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+body header .reverse {
+  height: 3.6rem;
+  width: 4rem;
+  background-color: #a8bfc9;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px #6b8997;
+          box-shadow: 0 4px #6b8997;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .reverse .reverse-icon {
+  background-image: url("../assets/icon-restart-dark-navy.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1.538rem;
+  width: 1.538rem;
+}
+
+body main {
+  min-width: 32.7rem;
+}
 /*# sourceMappingURL=styles.css.map */
