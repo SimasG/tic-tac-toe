@@ -1,11 +1,14 @@
 body {
-  display: flex;
+  display: grid;
   justify-content: center;
-  align-items: start;
+  align-content: start;
+  gap: 6.8rem;
   min-height: 100vh;
   padding: 2.4rem;
+  //   HEADER
   header {
-    min-width: 32.7rem;
+    max-width: 32.7rem;
+    max-height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -45,6 +48,7 @@ body {
       display: flex;
       justify-content: space-between;
       padding: 1rem 1.5rem;
+      margin-left: -3rem;
       p {
         font-weight: bold;
       }
@@ -78,7 +82,91 @@ body {
       }
     }
   }
+  //   MAIN GAME
   main {
-    min-width: 32.7rem;
+    max-width: 32.7rem;
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2.8rem;
+      .square {
+        height: 8.8rem;
+        width: 9.6rem;
+        background-color: $semi-dark-navy;
+        box-shadow: 0 8px $very-dark-navy-shadow;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .x-game {
+          background-image: url("../assets/icon-x.svg");
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 4rem;
+          width: 4rem;
+        }
+        .x-game-outline {
+          background-image: url("../assets/icon-x-outline.svg");
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 4rem;
+          width: 4rem;
+        }
+        .zero-game {
+          background-image: url("../assets/icon-o.svg");
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 4rem;
+          width: 4rem;
+        }
+        .zero-game-outline {
+          background-image: url("../assets/icon-o-outline.svg");
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 4rem;
+          width: 4rem;
+        }
+      }
+    }
+    .score-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .score {
+        width: 9.6rem;
+        height: 6.4rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $dark-navy-background;
+        p {
+          font-size: 1.2rem;
+          text-transform: uppercase;
+        }
+      }
+      .personal-victories {
+        background-color: $light-blue;
+      }
+      .ties {
+        background-color: $silver;
+      }
+      .cpu-victories {
+        background-color: $light-yellow;
+      }
+    }
   }
 }
