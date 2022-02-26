@@ -149,10 +149,7 @@ body {
 }
 
 body main {
-  top: 50%;
-  left: 50%;
   min-width: 32.7rem;
-  max-width: 46rem;
 }
 
 body main .logo {
@@ -303,6 +300,9 @@ body main .new-game-buttons .button {
   text-transform: uppercase;
   border-radius: 15px;
   height: 5.6rem;
+  letter-spacing: 0.1rem;
+  color: #1a2a33;
+  font-weight: bold;
 }
 
 body main .new-game-buttons .cpu {
@@ -315,5 +315,23 @@ body main .new-game-buttons .multiplayer {
   background-color: #31c3bd;
   -webkit-box-shadow: 0 8px #3b8d87;
           box-shadow: 0 8px #3b8d87;
+}
+
+@media (min-width: 768px) {
+  body main {
+    width: 46rem;
+  }
+  body main .logo {
+    margin-bottom: 4rem;
+  }
+  body main .new-game-buttons {
+    gap: 2.8rem;
+  }
+  body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer .picker-x {
+    width: 19.8rem;
+  }
+  body main .mark-picking-container .mark-picking-subcontainer .picker .picker-subcontainer .picker-zero {
+    width: 19.8rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -4,10 +4,8 @@ body {
   align-items: center;
   min-height: 100vh;
   main {
-    top: 50%;
-    left: 50%;
     min-width: 32.7rem;
-    max-width: 46rem;
+    // max-width: 46rem;
     .logo {
       display: flex;
       justify-content: center;
@@ -125,14 +123,45 @@ body {
         text-transform: uppercase;
         border-radius: 15px;
         height: 5.6rem;
+        letter-spacing: 0.1rem;
+        color: $dark-navy-background;
+        font-weight: bold;
       }
       .cpu {
         background-color: $light-yellow;
-        box-shadow: 0 8px #cc8c35;
+        box-shadow: 0 8px $light-yellow-darker;
       }
       .multiplayer {
         background-color: $light-blue;
-        box-shadow: 0 8px #3b8d87;
+        box-shadow: 0 8px $light-blue-darker;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    main {
+      width: 46rem;
+      .logo {
+        margin-bottom: 4rem;
+      }
+      .new-game-buttons {
+        gap: 2.8rem;
+      }
+      .mark-picking-container {
+        .mark-picking-subcontainer {
+          .picker {
+            .picker-subcontainer {
+              .picker-x {
+                width: 19.8rem;
+              }
+              .picker-zero {
+                width: 19.8rem;
+              }
+            }
+          }
+        }
       }
     }
   }
