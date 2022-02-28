@@ -209,6 +209,9 @@ body header .turn {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 1rem 1.5rem;
   margin-left: -3rem;
 }
@@ -366,7 +369,7 @@ body main .score-container .score {
 }
 
 body main .score-container .score p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
 }
 
@@ -474,5 +477,79 @@ body .game-over-container .modal .btn-container .btn-next-round {
   background-color: #f2b137;
   -webkit-box-shadow: 0 4px #cc8c35;
           box-shadow: 0 4px #cc8c35;
+}
+
+@media (min-width: 768px) {
+  body {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    gap: 3rem;
+  }
+  body header {
+    width: 45.7rem;
+    padding: 0;
+  }
+  body header .turn {
+    height: 4.8rem;
+    width: 14rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1.3rem;
+    margin: 0;
+    margin-left: -2rem;
+  }
+  body header .turn p {
+    font-size: 1.6rem;
+  }
+  body header .turn .x-silver {
+    height: 2rem;
+    width: 2rem;
+  }
+  body header .reverse {
+    height: 4.8rem;
+    width: 5.2rem;
+  }
+  body header .reverse .reverse-icon {
+    height: 2rem;
+    width: 2rem;
+  }
+  body main {
+    width: 45.7rem;
+  }
+  body main .main-grid {
+    gap: 2.5rem;
+    margin-bottom: 2.8rem;
+  }
+  body main .main-grid .square {
+    height: 13.2rem;
+    width: 14rem;
+  }
+  body main .main-grid .square .x-game {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+  body main .main-grid .square .x-game-outline {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+  body main .main-grid .square .zero-game {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+  body main .main-grid .square .zero-game-outline {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+  body main .score-container .score {
+    width: 14rem;
+    height: 7.2rem;
+  }
+  body main .score-container .score h3 {
+    font-size: 2.4rem;
+  }
 }
 /*# sourceMappingURL=styles-game.css.map */

@@ -48,6 +48,7 @@ body {
       box-shadow: 0 4px $very-dark-navy-shadow;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 1rem 1.5rem;
       margin-left: -3rem;
       p {
@@ -156,7 +157,7 @@ body {
         align-items: center;
         color: $dark-navy-background;
         p {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           text-transform: uppercase;
         }
       }
@@ -233,6 +234,102 @@ body {
         .btn-next-round {
           background-color: $light-yellow;
           box-shadow: 0 4px $light-yellow-darker;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    align-content: center;
+    gap: 3rem;
+    //   HEADER
+    header {
+      width: 45.7rem;
+      padding: 0;
+      .turn {
+        height: 4.8rem;
+        width: 14rem;
+        justify-content: center;
+        align-items: center;
+        gap: 1.3rem;
+        margin: 0;
+        margin-left: -2rem;
+        p {
+          font-size: 1.6rem;
+        }
+        .x-silver {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+      .reverse {
+        height: 4.8rem;
+        width: 5.2rem;
+        .reverse-icon {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+    //   MAIN GAME
+    main {
+      width: 45.7rem;
+      .main-grid {
+        gap: 2.5rem;
+        margin-bottom: 2.8rem;
+        .square {
+          height: 13.2rem;
+          width: 14rem;
+          .x-game {
+            height: 6.4rem;
+            width: 6.4rem;
+          }
+          .x-game-outline {
+            height: 6.4rem;
+            width: 6.4rem;
+          }
+          .zero-game {
+            height: 6.4rem;
+            width: 6.4rem;
+          }
+          .zero-game-outline {
+            height: 6.4rem;
+            width: 6.4rem;
+          }
+        }
+      }
+      .score-container {
+        .score {
+          width: 14rem;
+          height: 7.2rem;
+          p {
+          }
+          h3 {
+            font-size: 2.4rem;
+          }
+        }
+      }
+    }
+
+    .game-over-container {
+      .modal {
+        .modal-paragraph {
+        }
+        .modal-heading {
+          .x-modal {
+          }
+          h2 {
+          }
+        }
+        .btn-container {
+          .btn {
+          }
+          .btn-quit {
+          }
+          .btn-next-round {
+          }
         }
       }
     }
