@@ -7,7 +7,7 @@ body {
   //   HEADER
   header {
     min-width: 32.7rem;
-    padding: 2.4rem;
+    padding: 2.4rem 0;
     max-height: 4rem;
     display: flex;
     justify-content: space-between;
@@ -104,8 +104,18 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        .square-icon {
+          //   background-image: url("../assets/icon-x.svg");
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 4rem;
+          width: 4rem;
+        }
         .x-game {
-          background-image: url("../assets/icon-x.svg");
+          //   background-image: url("../assets/icon-x.svg");
           position: relative;
           background-size: contain;
           background-repeat: no-repeat;
@@ -114,7 +124,7 @@ body {
           width: 4rem;
         }
         .x-game-outline {
-          background-image: url("../assets/icon-x-outline.svg");
+          //   background-image: url("../assets/icon-x-outline.svg");
           position: relative;
           background-size: contain;
           background-repeat: no-repeat;
@@ -123,7 +133,7 @@ body {
           width: 4rem;
         }
         .zero-game {
-          background-image: url("../assets/icon-o.svg");
+          //   background-image: url("../assets/icon-o.svg");
           position: relative;
           background-size: contain;
           background-repeat: no-repeat;
@@ -132,7 +142,7 @@ body {
           width: 4rem;
         }
         .zero-game-outline {
-          background-image: url("../assets/icon-o-outline.svg");
+          //   background-image: url("../assets/icon-o-outline.svg");
           position: relative;
           background-size: contain;
           background-repeat: no-repeat;
