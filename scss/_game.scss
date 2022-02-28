@@ -172,8 +172,7 @@ body {
       }
     }
   }
-
-  .game-over-container {
+  .modal-container {
     position: fixed;
     // top: 0;
     left: 0;
@@ -183,6 +182,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .game-over-container {
     .modal {
       margin-bottom: 14rem;
       padding-top: 3.3rem;
@@ -194,7 +195,7 @@ body {
         text-align: center;
         margin-bottom: 2rem;
       }
-      .modal-heading {
+      .modal-heading-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -209,7 +210,7 @@ body {
           height: 2.8rem;
           width: 2.8rem;
         }
-        h2 {
+        .modal-heading {
           letter-spacing: 0.15rem;
           color: $light-blue;
           text-align: center;
@@ -230,10 +231,51 @@ body {
         .btn-quit {
           background-color: $silver;
           box-shadow: 0 4px $silver-shadow;
+          width: 7.6rem;
         }
         .btn-next-round {
           background-color: $light-yellow;
           box-shadow: 0 4px $light-yellow-darker;
+          width: 14.6rem;
+        }
+      }
+    }
+  }
+  .game-tied-container {
+    height: 100vh;
+    .modal {
+      margin-bottom: 14rem;
+      padding-top: 5.4rem;
+      padding-bottom: 5.8rem;
+      background-color: $semi-dark-navy;
+      width: 100%;
+      .modal-heading {
+        letter-spacing: 0.15rem;
+        color: $silver;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+        .btn {
+          color: #1a2a33;
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          padding: 1.8rem;
+          border-radius: 10px;
+        }
+        .btn-quit {
+          background-color: $silver;
+          box-shadow: 0 4px $silver-shadow;
+          width: 7.6rem;
+        }
+        .btn-next-round {
+          background-color: $light-yellow;
+          box-shadow: 0 4px $light-yellow-darker;
+          width: 14.6rem;
         }
       }
     }
@@ -304,8 +346,6 @@ body {
         .score {
           width: 14rem;
           height: 7.2rem;
-          p {
-          }
           h3 {
             font-size: 2.4rem;
           }
@@ -315,20 +355,41 @@ body {
 
     .game-over-container {
       .modal {
+        margin-bottom: 0;
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
         .modal-paragraph {
+          margin-bottom: 3rem;
         }
-        .modal-heading {
+        .modal-heading-container {
+          margin-bottom: 3rem;
+          gap: 2.5rem;
           .x-modal {
+            height: 6.4rem;
+            width: 6.4rem;
           }
-          h2 {
+          .modal-heading {
+            font-size: 4rem;
           }
+        }
+      }
+    }
+    .game-tied-container {
+      height: 100vh;
+      .modal {
+        margin-bottom: 0rem;
+        padding-top: 6.2rem;
+        padding-bottom: 5.8rem;
+        .modal-heading {
+          font-size: 4rem;
+          margin-bottom: 4rem;
         }
         .btn-container {
+          gap: 1.6rem;
           .btn {
-          }
-          .btn-quit {
-          }
-          .btn-next-round {
+            font-size: 1.6rem;
+            padding: 1.8rem;
+            border-radius: 10px;
           }
         }
       }
