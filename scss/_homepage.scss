@@ -82,15 +82,21 @@ body {
                 margin: 0 auto;
                 top: 20%;
               }
+              .x-icon.active {
+                background-image: url("../assets/icon-x-transparent.svg");
+              }
+            }
+            .picker-x.active {
+              background-color: #a8bfc9;
             }
             .picker-zero {
               height: 5.4rem;
               width: 13.2rem;
-              background-color: $silver;
+              background-color: transparent;
               border-radius: 10px;
               left: 0;
               .zero-icon {
-                background-image: url("../assets/icon-o-transparent.svg");
+                background-image: url("../assets/icon-o-silver.svg");
                 position: relative;
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -100,6 +106,12 @@ body {
                 margin: 0 auto;
                 top: 20%;
               }
+              .zero-icon.active {
+                background-image: url("../assets/icon-o-transparent.svg");
+              }
+            }
+            .picker-zero.active {
+              background-color: #a8bfc9;
             }
           }
         }

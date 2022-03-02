@@ -32,8 +32,8 @@
               <div class="picker-x">
                 <div class="x-icon"></div>
               </div>
-              <div class="picker-zero">
-                <div class="zero-icon"></div>
+              <div class="picker-zero active">
+                <div class="zero-icon active"></div>
               </div>
             </div>
           </label>
@@ -42,7 +42,9 @@
       </section>
 
       <section class="new-game-buttons">
-        <button class="button cpu">New Game (vs CPU)</button>
+        <button class="button cpu">
+          <a href="html/game.html">New Game (vs CPU)</a>
+        </button>
         <button class="button multiplayer">New Game (vs player)</button>
       </section>
       <!-- New game menu end -->
@@ -66,9 +68,8 @@
       restart -->
 
       <!-- Game board end -->
-      <a href="html/game.html">New Game</a>
     </main>
 
-    <script src="app.js" async defer></script>
+    <script src="../js/index.js" async defer></script>
   </body>
 </html>
