@@ -25,6 +25,10 @@ PLAN
 - Implement score keeping
 - Implement hover effects
 
+Other
+
+- Implement "not allowed" hover sign for marks that have already been placed in the grid
+
 Extras
 
 - Save the game state in the browser so that it’s preserved if the player refreshes their browser

@@ -272,6 +272,26 @@ body main {
   margin: 0 auto;
 }
 
+body main .main-grid.x .square:not(.x):not(.circle):hover .square-icon {
+  background-image: url("../assets/icon-x-outline.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 4rem;
+  width: 4rem;
+}
+
+body main .main-grid.circle .square:not(.x):not(.circle):hover .square-icon {
+  background-image: url("../assets/icon-o-outline.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 4rem;
+  width: 4rem;
+}
+
 body main .main-grid {
   display: -ms-grid;
   display: grid;
@@ -305,43 +325,12 @@ body main .main-grid .square {
   cursor: pointer;
 }
 
+body main .main-grid .square .x,
+body main .main-grid .square .circle {
+  cursor: not-allowed;
+}
+
 body main .main-grid .square .square-icon {
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 4rem;
-  width: 4rem;
-}
-
-body main .main-grid .square .x-game {
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 4rem;
-  width: 4rem;
-}
-
-body main .main-grid .square .x-game-outline {
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 4rem;
-  width: 4rem;
-}
-
-body main .main-grid .square .zero-game {
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 4rem;
-  width: 4rem;
-}
-
-body main .main-grid .square .zero-game-outline {
   position: relative;
   background-size: contain;
   background-repeat: no-repeat;

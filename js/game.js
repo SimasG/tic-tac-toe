@@ -1,5 +1,5 @@
 // GAME -> solo
-const cellElements = document.querySelectorAll(".square");
+const cellElements = document.querySelectorAll("[data-cell]");
 const squareIcons = document.querySelectorAll(".square-icon");
 
 const x_class = "x";
@@ -25,7 +25,7 @@ function handleClick(e) {
   const currentClass = circleTurn ? circle_class : x_class;
   // squareIcon.style.backgroundImage = "url('../assets/icon-x.svg')";
   // place mark
-  placeMark(cell, currentClass)
+  placeMark(cell, currentClass);
   // check for win
   // check for draw
   // if no win/draw, switch turns
@@ -37,12 +37,3 @@ function placeMark(cell, currentClass) {
 }
 
 // If x -> active, "x turn" & player 1 starts. If o -> active, "x turn" and CPU starts.
-
-// function lines() {
-//   let w = width / 3;
-//   let h = height / 3;
-//   line(w, 0, w, height);
-//   line(h, 0, h, width);
-// }
-
-// lines();
