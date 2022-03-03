@@ -398,20 +398,24 @@ body main .score-container .cpu-victories {
 }
 
 body .modal-container {
+  display: none;
   position: fixed;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body .modal-container.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body .game-over-container .modal {
@@ -442,8 +446,27 @@ body .game-over-container .modal .modal-heading-container {
   margin-bottom: 3rem;
 }
 
-body .game-over-container .modal .modal-heading-container .x-modal {
+body .game-over-container .modal .modal-heading-container .winning-message {
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+body .game-over-container .modal .modal-heading-container .winning-message-icon.x {
   background-image: url("../assets/icon-x.svg");
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+body .game-over-container .modal .modal-heading-container .winning-message-icon.circle {
+  background-image: url("../assets/icon-o.svg");
   position: relative;
   background-size: contain;
   background-repeat: no-repeat;
@@ -454,8 +477,15 @@ body .game-over-container .modal .modal-heading-container .x-modal {
 
 body .game-over-container .modal .modal-heading-container .modal-heading {
   letter-spacing: 0.15rem;
-  color: #31c3bd;
   text-align: center;
+}
+
+body .game-over-container .modal .modal-heading-container .modal-heading.x {
+  color: #31c3bd;
+}
+
+body .game-over-container .modal .modal-heading-container .modal-heading.circle {
+  color: #f2b137;
 }
 
 body .game-over-container .modal .btn-container {

@@ -14,7 +14,10 @@ const winning_combinations = [
 
 const mainGrid = document.getElementById("main-grid");
 const cellElements = document.querySelectorAll("[data-cell]");
-const squareIcons = document.querySelectorAll(".square-icon");
+const winningMessageElement = document.querySelector(".modal-container");
+const winningMessageTextElement = document.querySelector(".modal-heading");
+const winningMessageIcon = document.querySelector(".winning-message-icon");
+// const squareIcons = document.querySelectorAll(".square-icon");
 
 // if true -> o's turn, if false -> x's turn. "let circleTurn" means "circleTurn" is undefined by default.
 let circleTurn;
@@ -40,14 +43,29 @@ function handleClick(e) {
 
   // CHECK FOR WIN
   if (checkWin(currentClass)) {
-    console.log("winner");
+    endGame(false);
   }
   // CHECK FOR DRAW
   // IF NO WIN/DRAW, SWITCH TURNS
   swapTurns();
-
   // SET HOVER STATES
   setHoverBoardClass();
+}
+
+function endGame(draw) {
+  if (draw) {
+  } else {
+    if (circleTurn) {
+      winningMessageIcon.classList.add(circle_class);
+      winningMessageTextElement.classList.add(circle_class);
+      winningMessageTextElement.innerText = `TAKES THE ROUND!`;
+    } else {
+      winningMessageIcon.classList.add(x_class);
+      winningMessageTextElement.classList.add(x_class);
+      winningMessageTextElement.innerText = `TAKES THE ROUND!`;
+    }
+  }
+  winningMessageElement.classList.add("show");
 }
 
 function placeMark(cell, currentClass) {
@@ -59,10 +77,10 @@ function swapTurns() {
 }
 
 function setHoverBoardClass() {
-  if (circleTurn == true) {
+  if (circleTurn) {
     mainGrid.classList.add(circle_class);
     mainGrid.classList.remove(x_class);
-  } else if (circleTurn == false) {
+  } else {
     mainGrid.classList.add(x_class);
     mainGrid.classList.remove(circle_class);
   }

@@ -217,15 +217,18 @@ body {
     }
   }
   .modal-container {
+    display: none;
     position: fixed;
     // top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .modal-container.show {
+    display: flex;
   }
   .game-over-container {
     .modal {
@@ -245,8 +248,43 @@ body {
         align-items: center;
         gap: 0.9rem;
         margin-bottom: 3rem;
-        .x-modal {
+        .winning-message {
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 2.8rem;
+          width: 2.8rem;
+        }
+        // .winning-message-icon-x {
+        //   background-image: url("../assets/icon-x.svg");
+        //   position: relative;
+        //   background-size: contain;
+        //   background-repeat: no-repeat;
+        //   background-position: center;
+        //   height: 2.8rem;
+        //   width: 2.8rem;
+        // }
+        // .winning-message-icon-circle {
+        //   background-image: url("../assets/icon-o.svg");
+        //   position: relative;
+        //   background-size: contain;
+        //   background-repeat: no-repeat;
+        //   background-position: center;
+        //   height: 2.8rem;
+        //   width: 2.8rem;
+        // }
+        .winning-message-icon.x {
           background-image: url("../assets/icon-x.svg");
+          position: relative;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 2.8rem;
+          width: 2.8rem;
+        }
+        .winning-message-icon.circle {
+          background-image: url("../assets/icon-o.svg");
           position: relative;
           background-size: contain;
           background-repeat: no-repeat;
@@ -256,8 +294,13 @@ body {
         }
         .modal-heading {
           letter-spacing: 0.15rem;
-          color: $light-blue;
           text-align: center;
+        }
+        .modal-heading.x {
+          color: $light-blue;
+        }
+        .modal-heading.circle {
+          color: $light-yellow;
         }
       }
       .btn-container {
