@@ -88,27 +88,23 @@ body {
   main {
     min-width: 32.7rem;
     margin: 0 auto;
-    .main-grid.x .square:not(.x):not(.circle):hover {
-      .square-icon {
-        background-image: url("../assets/icon-x-outline.svg");
-        position: relative;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 4rem;
-        width: 4rem;
-      }
+    .main-grid.x .square .square-icon:not(.x):not(.circle):hover {
+      background-image: url("../assets/icon-x-outline.svg");
+      position: relative;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 4rem;
+      width: 4rem;
     }
-    .main-grid.circle .square:not(.x):not(.circle):hover {
-      .square-icon {
-        background-image: url("../assets/icon-o-outline.svg");
-        position: relative;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 4rem;
-        width: 4rem;
-      }
+    .main-grid.circle .square .square-icon:not(.x):not(.circle):hover {
+      background-image: url("../assets/icon-o-outline.svg");
+      position: relative;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 4rem;
+      width: 4rem;
     }
     .main-grid {
       display: grid;
@@ -145,6 +141,12 @@ body {
           background-position: center;
           height: 4rem;
           width: 4rem;
+        }
+        .square-icon.x {
+          background-image: url("../assets/icon-x.svg");
+        }
+        .square-icon.circle {
+          background-image: url("../assets/icon-o.svg");
         }
         // .x-game {
         //     background-image: url("../assets/icon-x.svg");

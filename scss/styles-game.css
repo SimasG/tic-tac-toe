@@ -272,7 +272,7 @@ body main {
   margin: 0 auto;
 }
 
-body main .main-grid.x .square:not(.x):not(.circle):hover .square-icon {
+body main .main-grid.x .square .square-icon:not(.x):not(.circle):hover {
   background-image: url("../assets/icon-x-outline.svg");
   position: relative;
   background-size: contain;
@@ -282,7 +282,7 @@ body main .main-grid.x .square:not(.x):not(.circle):hover .square-icon {
   width: 4rem;
 }
 
-body main .main-grid.circle .square:not(.x):not(.circle):hover .square-icon {
+body main .main-grid.circle .square .square-icon:not(.x):not(.circle):hover {
   background-image: url("../assets/icon-o-outline.svg");
   position: relative;
   background-size: contain;
@@ -337,6 +337,14 @@ body main .main-grid .square .square-icon {
   background-position: center;
   height: 4rem;
   width: 4rem;
+}
+
+body main .main-grid .square .square-icon.x {
+  background-image: url("../assets/icon-x.svg");
+}
+
+body main .main-grid .square .square-icon.circle {
+  background-image: url("../assets/icon-o.svg");
 }
 
 body main .score-container {
