@@ -38,34 +38,41 @@ function handleClick(e) {
   // Since circleTurn is "undefined", currentClass is always "x_class".
   const currentClass = circleTurn ? circle_class : x_class;
 
-  // PLACE MARK
   placeMark(cell, currentClass);
 
-  // CHECK FOR WIN
   if (checkWin(currentClass)) {
     endGame(false);
+  } else if (isDraw) {
+    endGame(true);
+  } else {
+    swapTurns();
+    setHoverBoardClass();
   }
-  // CHECK FOR DRAW
-  // IF NO WIN/DRAW, SWITCH TURNS
-  swapTurns();
-  // SET HOVER STATES
-  setHoverBoardClass();
 }
 
 function endGame(draw) {
   if (draw) {
+    // winningMessageTextElement.innerText = `ROUND TIED`;
+    // winningMessageTextElement.style.color = "#a8bfc9";
   } else {
     if (circleTurn) {
       winningMessageIcon.classList.add(circle_class);
       winningMessageTextElement.classList.add(circle_class);
-      winningMessageTextElement.innerText = `TAKES THE ROUND!`;
     } else {
       winningMessageIcon.classList.add(x_class);
       winningMessageTextElement.classList.add(x_class);
-      winningMessageTextElement.innerText = `TAKES THE ROUND!`;
     }
   }
   winningMessageElement.classList.add("show");
+}
+
+function isDraw() {
+  // destructuring "cellElements" into an array. Otherwise, the "every" method wouldn't work here.
+  return [...cellElements].every((cell) => {
+    return (
+      cell.classList.contains(x_class) || cell.classList.contains(circle_class)
+    );
+  });
 }
 
 function placeMark(cell, currentClass) {
@@ -96,3 +103,7 @@ function checkWin(currentClass) {
     });
   });
 }
+
+// event listener + function for "next round"
+
+// event listener + function for "quit"
