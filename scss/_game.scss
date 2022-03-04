@@ -64,7 +64,7 @@ body {
         width: 1.6rem;
       }
     }
-    .reverse {
+    .btn-restart {
       height: 3.6rem;
       width: 4rem;
       background-color: $silver;
@@ -73,7 +73,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      .reverse-icon {
+      .icon-restart {
         background-image: url("../assets/icon-restart-dark-navy.svg");
         position: relative;
         background-size: contain;
@@ -127,14 +127,7 @@ body {
         .circle {
           cursor: not-allowed;
         }
-        // .x:hover {
-        //   background-image: url("../assets/icon-x-outline.svg");
-        // }
-        // .circle:hover {
-        //   background-image: url("../assets/icon-o-outline.svg");
-        // }
         .square-icon {
-          //   background-image: url("../assets/icon-x.svg");
           position: relative;
           background-size: contain;
           background-repeat: no-repeat;
@@ -148,42 +141,6 @@ body {
         .square-icon.circle {
           background-image: url("../assets/icon-o.svg");
         }
-        // .x-game {
-        //     background-image: url("../assets/icon-x.svg");
-        //   position: relative;
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   height: 4rem;
-        //   width: 4rem;
-        // }
-        // .x-game-outline {
-        //     background-image: url("../assets/icon-x-outline.svg");
-        //   position: relative;
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   height: 4rem;
-        //   width: 4rem;
-        // }
-        // .zero-game {
-        //     background-image: url("../assets/icon-o.svg");
-        //   position: relative;
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   height: 4rem;
-        //   width: 4rem;
-        // }
-        // .zero-game-outline {
-        //     background-image: url("../assets/icon-o-outline.svg");
-        //   position: relative;
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   height: 4rem;
-        //   width: 4rem;
-        // }
       }
     }
     .score-container {
@@ -256,24 +213,6 @@ body {
           height: 2.8rem;
           width: 2.8rem;
         }
-        // .winning-message-icon-x {
-        //   background-image: url("../assets/icon-x.svg");
-        //   position: relative;
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   height: 2.8rem;
-        //   width: 2.8rem;
-        // }
-        // .winning-message-icon-circle {
-        //   background-image: url("../assets/icon-o.svg");
-        //   position: relative;
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   height: 2.8rem;
-        //   width: 2.8rem;
-        // }
         .winning-message-icon.x {
           background-image: url("../assets/icon-x.svg");
           position: relative;
@@ -318,17 +257,17 @@ body {
         .btn-quit {
           background-color: $silver;
           box-shadow: 0 4px $silver-shadow;
-          width: 7.6rem;
+          min-width: 7.6rem;
         }
         .btn-next-round {
           background-color: $light-yellow;
           box-shadow: 0 4px $light-yellow-darker;
-          width: 14.6rem;
+          min-width: 14.6rem;
         }
       }
     }
   }
-  .game-tied-container {
+  .restart-container {
     height: 100vh;
     .modal {
       margin-bottom: 14rem;
@@ -354,18 +293,31 @@ body {
           padding: 1.8rem;
           border-radius: 10px;
         }
-        .btn-quit {
+        // .btn-quit {
+        //   background-color: $silver;
+        //   box-shadow: 0 4px $silver-shadow;
+        //   width: 7.6rem;
+        // }
+        // .btn-next-round {
+        //   background-color: $light-yellow;
+        //   box-shadow: 0 4px $light-yellow-darker;
+        //   width: 14.6rem;
+        // }
+        .btn-cancel {
           background-color: $silver;
           box-shadow: 0 4px $silver-shadow;
-          width: 7.6rem;
+          min-width: 7.6rem;
         }
-        .btn-next-round {
+        .btn-restart-modal {
           background-color: $light-yellow;
           box-shadow: 0 4px $light-yellow-darker;
-          width: 14.6rem;
+          min-width: 14.6rem;
         }
       }
     }
+  }
+  .restart-container.show {
+    display: flex;
   }
 }
 
@@ -393,10 +345,10 @@ body {
           width: 2rem;
         }
       }
-      .reverse {
+      .btn-restart {
         height: 4.8rem;
         width: 5.2rem;
-        .reverse-icon {
+        .icon-restart {
           height: 2rem;
           width: 2rem;
         }
@@ -461,7 +413,7 @@ body {
         }
       }
     }
-    .game-tied-container {
+    .restart-container {
       height: 100vh;
       .modal {
         margin-bottom: 0rem;

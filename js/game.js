@@ -15,8 +15,16 @@ const winning_combinations = [
 const mainGrid = document.getElementById("main-grid");
 const cellElements = document.querySelectorAll("[data-cell]");
 const winningMessageElement = document.querySelector(".modal-container");
+const restartElement = document.querySelector(".restart-container");
 const winningMessageTextElement = document.querySelector(".modal-heading");
+const restartTextElement = document.querySelector(".restart-heading");
 const winningMessageIcon = document.querySelector(".winning-message-icon");
+const btnQuit = document.querySelector(".btn-quit");
+const btnNextRound = document.querySelector(".btn-next-round");
+const btnRestart = document.querySelector(".btn-restart");
+const btnCancel = document.querySelector(".btn-cancel");
+const btnRestartModal = document.querySelector(".btn-restart-modal");
+
 // const squareIcons = document.querySelectorAll(".square-icon");
 
 // if true -> o's turn, if false -> x's turn. "let circleTurn" means "circleTurn" is undefined by default.
@@ -27,8 +35,12 @@ startGame();
 function startGame() {
   circleTurn = false;
   cellElements.forEach((cellElement) => {
+    cellElement.classList.remove(x_class);
+    cellElement.classList.remove(circle_class);
     cellElement.addEventListener("click", handleClick, { once: true });
   });
+  winningMessageElement.classList.remove("show");
+  restartElement.classList.remove("show");
   setHoverBoardClass();
 }
 
@@ -52,6 +64,10 @@ function handleClick(e) {
 
 // If "isDraw()" runs, then endGame() argument becomes "true". Here, we name it "draw".
 function endGame(draw) {
+  winningMessageIcon.classList.remove(circle_class);
+  winningMessageTextElement.classList.remove(circle_class);
+  winningMessageIcon.classList.remove(x_class);
+  winningMessageTextElement.classList.remove(x_class);
   if (draw) {
     winningMessageTextElement.innerText = `ROUND TIED`;
     winningMessageTextElement.style.color = "#a8bfc9";
@@ -85,6 +101,8 @@ function swapTurns() {
 }
 
 function setHoverBoardClass() {
+  mainGrid.classList.remove(circle_class);
+  mainGrid.classList.remove(x_class);
   if (circleTurn) {
     mainGrid.classList.add(circle_class);
     mainGrid.classList.remove(x_class);
@@ -105,6 +123,38 @@ function checkWin(currentClass) {
   });
 }
 
-// event listener + function for "next round"
+// event listener + function for "next round" + score keeping
 
 // event listener + function for "quit"
+
+// event listener + function for "restart"
+btnRestart.addEventListener("click", restartGame);
+
+function restartGame() {
+  winningMessageIcon.classList.remove(circle_class);
+  winningMessageTextElement.classList.remove(circle_class);
+  winningMessageIcon.classList.remove(x_class);
+  winningMessageTextElement.classList.remove(x_class);
+
+  restartElement.classList.add("show");
+}
+
+btnCancel.addEventListener("click", () => {
+  restartElement.classList.remove("show");
+});
+
+btnRestartModal.addEventListener("click", startGame);
+
+// function quitGame() {
+//   cellElements.forEach((cell) => {
+//     cell.classList.remove(x_class);
+//     cell.classList.remove(circle_class);
+//   });
+//   winningMessageElement.classList.remove("show");
+//   circleTurn = false;
+// }
+
+// Initial turn choosing
+// Implement automatic CPU moves
+// Implement more intelligent CPU logic?
+// Implement multiplayer mode?

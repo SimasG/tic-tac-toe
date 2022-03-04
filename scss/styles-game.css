@@ -239,7 +239,7 @@ body header .turn .x-silver {
   width: 1.6rem;
 }
 
-body header .reverse {
+body header .btn-restart {
   height: 3.6rem;
   width: 4rem;
   background-color: #a8bfc9;
@@ -257,7 +257,7 @@ body header .reverse {
           align-items: center;
 }
 
-body header .reverse .reverse-icon {
+body header .btn-restart .icon-restart {
   background-image: url("../assets/icon-restart-dark-navy.svg");
   position: relative;
   background-size: contain;
@@ -513,21 +513,21 @@ body .game-over-container .modal .btn-container .btn-quit {
   background-color: #a8bfc9;
   -webkit-box-shadow: 0 4px #6b8997;
           box-shadow: 0 4px #6b8997;
-  width: 7.6rem;
+  min-width: 7.6rem;
 }
 
 body .game-over-container .modal .btn-container .btn-next-round {
   background-color: #f2b137;
   -webkit-box-shadow: 0 4px #cc8c35;
           box-shadow: 0 4px #cc8c35;
-  width: 14.6rem;
+  min-width: 14.6rem;
 }
 
-body .game-tied-container {
+body .restart-container {
   height: 100vh;
 }
 
-body .game-tied-container .modal {
+body .restart-container .modal {
   margin-bottom: 14rem;
   padding-top: 5.4rem;
   padding-bottom: 5.8rem;
@@ -535,14 +535,14 @@ body .game-tied-container .modal {
   width: 100%;
 }
 
-body .game-tied-container .modal .modal-heading {
+body .restart-container .modal .modal-heading {
   letter-spacing: 0.15rem;
   color: #a8bfc9;
   text-align: center;
   margin-bottom: 3rem;
 }
 
-body .game-tied-container .modal .btn-container {
+body .restart-container .modal .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -555,7 +555,7 @@ body .game-tied-container .modal .btn-container {
   gap: 1.6rem;
 }
 
-body .game-tied-container .modal .btn-container .btn {
+body .restart-container .modal .btn-container .btn {
   color: #1a2a33;
   text-transform: uppercase;
   font-size: 1.6rem;
@@ -563,18 +563,24 @@ body .game-tied-container .modal .btn-container .btn {
   border-radius: 10px;
 }
 
-body .game-tied-container .modal .btn-container .btn-quit {
+body .restart-container .modal .btn-container .btn-cancel {
   background-color: #a8bfc9;
   -webkit-box-shadow: 0 4px #6b8997;
           box-shadow: 0 4px #6b8997;
-  width: 7.6rem;
+  min-width: 7.6rem;
 }
 
-body .game-tied-container .modal .btn-container .btn-next-round {
+body .restart-container .modal .btn-container .btn-restart-modal {
   background-color: #f2b137;
   -webkit-box-shadow: 0 4px #cc8c35;
           box-shadow: 0 4px #cc8c35;
-  width: 14.6rem;
+  min-width: 14.6rem;
+}
+
+body .restart-container.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 768px) {
@@ -607,11 +613,11 @@ body .game-tied-container .modal .btn-container .btn-next-round {
     height: 2rem;
     width: 2rem;
   }
-  body header .reverse {
+  body header .btn-restart {
     height: 4.8rem;
     width: 5.2rem;
   }
-  body header .reverse .reverse-icon {
+  body header .btn-restart .icon-restart {
     height: 2rem;
     width: 2rem;
   }
@@ -668,22 +674,22 @@ body .game-tied-container .modal .btn-container .btn-next-round {
   body .game-over-container .modal .modal-heading-container .modal-heading {
     font-size: 4rem;
   }
-  body .game-tied-container {
+  body .restart-container {
     height: 100vh;
   }
-  body .game-tied-container .modal {
+  body .restart-container .modal {
     margin-bottom: 0rem;
     padding-top: 6.2rem;
     padding-bottom: 5.8rem;
   }
-  body .game-tied-container .modal .modal-heading {
+  body .restart-container .modal .modal-heading {
     font-size: 4rem;
     margin-bottom: 4rem;
   }
-  body .game-tied-container .modal .btn-container {
+  body .restart-container .modal .btn-container {
     gap: 1.6rem;
   }
-  body .game-tied-container .modal .btn-container .btn {
+  body .restart-container .modal .btn-container .btn {
     font-size: 1.6rem;
     padding: 1.8rem;
     border-radius: 10px;
