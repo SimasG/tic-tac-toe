@@ -1,4 +1,10 @@
 // GAME -> solo
+// const player1 = require("./index.js");
+// const player2 = require("./index.js");
+
+console.log(player1);
+console.log(player2);
+
 const x_class = "x";
 const circle_class = "circle";
 const winning_combinations = [
@@ -27,6 +33,7 @@ const btnRestartModal = document.querySelector(".btn-restart-modal");
 const wins = document.querySelector(".win-number");
 const ties = document.querySelector(".tie-number");
 const losses = document.querySelector(".loss-number");
+const turnIcon = document.querySelector("[data-turn-icon]");
 
 let winCounter = 0;
 let tieCounter = 0;
@@ -44,10 +51,13 @@ function startGame() {
   cellElements.forEach((cellElement) => {
     cellElement.classList.remove(x_class);
     cellElement.classList.remove(circle_class);
+    cellElement.removeEventListener("click", handleClick);
     cellElement.addEventListener("click", handleClick, { once: true });
   });
   winningMessageElement.classList.remove("show");
   restartElement.classList.remove("show");
+  turnIcon.classList.remove("circle-silver");
+  turnIcon.classList.add("x-silver");
   setHoverBoardClass();
 }
 
@@ -67,6 +77,9 @@ function handleClick(e) {
     swapTurns();
     setHoverBoardClass();
   }
+
+  turnIcon.classList.toggle("circle-silver");
+  turnIcon.classList.toggle("x-silver");
 }
 
 // If "isDraw()" runs, then endGame() argument becomes "true". Here, we name it "draw".
@@ -148,6 +161,8 @@ btnCancel.addEventListener("click", () => {
 btnRestartModal.addEventListener("click", startGame);
 
 // Initial turn choosing
+// player 1 => you. player2 => cpu
+
 // Implement automatic CPU moves
 // Implement more intelligent CPU logic?
 // Implement multiplayer mode?

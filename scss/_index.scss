@@ -1,9 +1,181 @@
+// homepage
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  main {
+    min-width: 32.7rem;
+    // max-width: 46rem;
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 3.2rem;
+      .x {
+        background-image: url("../assets/icon-x.svg");
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 3.2rem;
+        width: 3.2rem;
+      }
+      .zero {
+        background-image: url("../assets/icon-o.svg");
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 3.174rem;
+        width: 3.174rem;
+      }
+    }
+    .mark-picking-container {
+      background-color: $semi-dark-navy;
+      border-radius: 15px;
+      text-align: center;
+      padding: 2.4rem;
+      box-shadow: 0 8px $very-dark-navy-shadow;
+      margin-bottom: 4rem;
+      h4 {
+        color: $silver;
+        text-transform: uppercase;
+        margin-bottom: 2.4rem;
+      }
+      .mark-picking-subcontainer {
+        .picker {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          height: 7.2rem;
+          input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          .picker-subcontainer {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $dark-navy-background;
+            border-radius: 15px;
+            padding: 0.9rem 0.8rem;
+            display: flex;
+            .picker-x {
+              height: 5.4rem;
+              width: 13.2rem;
+              background-color: transparent;
+              border-radius: 10px;
+              left: 0;
+              .x-icon {
+                background-image: url("../assets/icon-x-silver.svg");
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 3.2rem;
+                width: 3.2rem;
+                margin: 0 auto;
+                top: 20%;
+              }
+              .x-icon.active {
+                background-image: url("../assets/icon-x-transparent.svg");
+              }
+            }
+            .picker-x.active {
+              background-color: #a8bfc9;
+            }
+            .picker-zero {
+              height: 5.4rem;
+              width: 13.2rem;
+              background-color: transparent;
+              border-radius: 10px;
+              left: 0;
+              .zero-icon {
+                background-image: url("../assets/icon-o-silver.svg");
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 3.174rem;
+                width: 3.174rem;
+                margin: 0 auto;
+                top: 20%;
+              }
+              .zero-icon.active {
+                background-image: url("../assets/icon-o-transparent.svg");
+              }
+            }
+            .picker-zero.active {
+              background-color: #a8bfc9;
+            }
+          }
+        }
+      }
+      p {
+        color: $silver;
+        opacity: 0.5;
+        text-transform: uppercase;
+        margin-top: 1.8rem;
+      }
+    }
+    .new-game-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.4rem;
+      .button {
+        width: 100%;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        border-radius: 15px;
+        height: 5.6rem;
+        letter-spacing: 0.1rem;
+        color: $dark-navy-background;
+        font-weight: bold;
+      }
+      .cpu {
+        background-color: $light-yellow;
+        box-shadow: 0 8px $light-yellow-darker;
+      }
+      .multiplayer {
+        background-color: $light-blue;
+        box-shadow: 0 8px $light-blue-darker;
+      }
+    }
+  }
+  main.hide {
+    display: none;
+  }
+}
+body.show {
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  //   justify-content: center;
+  justify-content: center;
   align-content: start;
   gap: 6.8rem;
-  min-height: 100vh;
+}
+
+// game
+body {
+  //   display: none;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   display: grid;
+  //   justify-content: center;
+  //   align-content: start;
+  //   gap: 6.8rem;
+  //   min-height: 100vh;
   //   HEADER
   header {
     min-width: 32.7rem;
@@ -13,6 +185,7 @@ body {
     justify-content: space-between;
     align-items: start;
     margin: 0 auto;
+    display: none;
     .logo {
       display: flex;
       justify-content: center;
@@ -93,8 +266,12 @@ body {
       }
     }
   }
+  header.show {
+    display: flex;
+  }
   //   MAIN GAME
-  main {
+  .game-container {
+    display: none;
     min-width: 32.7rem;
     margin: 0 auto;
     .main-grid.x .square .square-icon:not(.x):not(.circle):hover {
@@ -181,6 +358,9 @@ body {
         background-color: $light-yellow;
       }
     }
+  }
+  .game-container.show {
+    display: block;
   }
   .modal-container {
     display: none;
@@ -320,6 +500,36 @@ body {
   }
 }
 
+// homepage
+@media (min-width: 768px) {
+  body {
+    main {
+      width: 46rem;
+      .logo {
+        margin-bottom: 4rem;
+      }
+      .new-game-buttons {
+        gap: 2.8rem;
+      }
+      .mark-picking-container {
+        .mark-picking-subcontainer {
+          .picker {
+            .picker-subcontainer {
+              .picker-x {
+                width: 19.8rem;
+              }
+              .picker-zero {
+                width: 19.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// game
 @media (min-width: 768px) {
   body {
     align-content: center;
@@ -354,7 +564,7 @@ body {
       }
     }
     //   MAIN GAME
-    main {
+    .game-container {
       width: 45.7rem;
       .main-grid {
         gap: 2.5rem;
