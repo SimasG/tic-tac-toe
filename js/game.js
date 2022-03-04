@@ -42,7 +42,7 @@ function handleClick(e) {
 
   if (checkWin(currentClass)) {
     endGame(false);
-  } else if (isDraw) {
+  } else if (isDraw()) {
     endGame(true);
   } else {
     swapTurns();
@@ -50,10 +50,11 @@ function handleClick(e) {
   }
 }
 
+// If "isDraw()" runs, then endGame() argument becomes "true". Here, we name it "draw".
 function endGame(draw) {
   if (draw) {
-    // winningMessageTextElement.innerText = `ROUND TIED`;
-    // winningMessageTextElement.style.color = "#a8bfc9";
+    winningMessageTextElement.innerText = `ROUND TIED`;
+    winningMessageTextElement.style.color = "#a8bfc9";
   } else {
     if (circleTurn) {
       winningMessageIcon.classList.add(circle_class);
