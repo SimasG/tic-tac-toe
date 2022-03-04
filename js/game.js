@@ -24,6 +24,13 @@ const btnNextRound = document.querySelector(".btn-next-round");
 const btnRestart = document.querySelector(".btn-restart");
 const btnCancel = document.querySelector(".btn-cancel");
 const btnRestartModal = document.querySelector(".btn-restart-modal");
+const wins = document.querySelector(".win-number");
+const ties = document.querySelector(".tie-number");
+const losses = document.querySelector(".loss-number");
+
+let winCounter = 0;
+let tieCounter = 0;
+let lossCounter = 0;
 
 // const squareIcons = document.querySelectorAll(".square-icon");
 
@@ -69,8 +76,11 @@ function endGame(draw) {
   winningMessageIcon.classList.remove(x_class);
   winningMessageTextElement.classList.remove(x_class);
   if (draw) {
+    console.log(draw);
     winningMessageTextElement.innerText = `ROUND TIED`;
     winningMessageTextElement.style.color = "#a8bfc9";
+    tieCounter++;
+    ties.innerHTML = tieCounter;
   } else {
     if (circleTurn) {
       winningMessageIcon.classList.add(circle_class);
@@ -124,35 +134,18 @@ function checkWin(currentClass) {
 }
 
 // event listener + function for "next round" + score keeping
-
-// event listener + function for "quit"
+btnNextRound.addEventListener("click", startGame);
 
 // event listener + function for "restart"
-btnRestart.addEventListener("click", restartGame);
-
-function restartGame() {
-  winningMessageIcon.classList.remove(circle_class);
-  winningMessageTextElement.classList.remove(circle_class);
-  winningMessageIcon.classList.remove(x_class);
-  winningMessageTextElement.classList.remove(x_class);
-
+btnRestart.addEventListener("click", () => {
   restartElement.classList.add("show");
-}
+});
 
 btnCancel.addEventListener("click", () => {
   restartElement.classList.remove("show");
 });
 
 btnRestartModal.addEventListener("click", startGame);
-
-// function quitGame() {
-//   cellElements.forEach((cell) => {
-//     cell.classList.remove(x_class);
-//     cell.classList.remove(circle_class);
-//   });
-//   winningMessageElement.classList.remove("show");
-//   circleTurn = false;
-// }
 
 // Initial turn choosing
 // Implement automatic CPU moves
