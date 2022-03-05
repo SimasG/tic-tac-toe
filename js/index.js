@@ -1,8 +1,8 @@
 // HOMEPAGE
 const x = document.querySelector(".picker-x");
-const zero = document.querySelector(".picker-zero");
+const circle = document.querySelector(".picker-zero");
 const xIcon = document.querySelector(".x-icon");
-const zeroIcon = document.querySelector(".zero-icon");
+const circleIcon = document.querySelector(".zero-icon");
 const btnCPU = document.querySelector(".cpu");
 const body = document.querySelector("body");
 const homepage = document.querySelector("main");
@@ -16,33 +16,59 @@ btnCPU.addEventListener("click", () => {
   gameContainer.classList.add("show");
 });
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    body.classList.remove("show");
+    homepage.classList.remove("hide");
+    gameHeader.classList.remove("show");
+    gameContainer.classList.remove("show");
+    x.classList.remove("active");
+    xIcon.classList.remove("active");
+    circle.classList.add("active");
+    circleIcon.classList.add("active");
+    winCounter = 0;
+    wins.innerHTML = winCounter;
+    tieCounter = 0;
+    ties.innerHTML = tieCounter;
+    lossCounter = 0;
+    losses.innerHTML = lossCounter;
+    startGame();
+  }
+});
+
 let player1 = "circle";
-let player2 = "x";
+let player2CPU = "x";
+// const huPlayer = "O";
+// const aiPlayer = "X";
+
+// if true -> o's turn, if false -> x's turn. "let circleTurn" means "circleTurn" is undefined by default.
+let circleTurn;
 
 x.addEventListener("click", () => {
   x.classList.add("active");
   xIcon.classList.add("active");
-  zero.classList.remove("active");
-  zeroIcon.classList.remove("active");
+  circle.classList.remove("active");
+  circleIcon.classList.remove("active");
   player1 = "x";
-  player2 = "circle";
+  player2CPU = "circle";
+  console.log(`player1 is ${player1}`);
+  console.log(`player2CPU is ${player2CPU}`);
+  // circleTurn = false;
 });
 
-zero.addEventListener("click", () => {
+circle.addEventListener("click", () => {
   x.classList.remove("active");
   xIcon.classList.remove("active");
-  zero.classList.add("active");
-  zeroIcon.classList.add("active");
+  circle.classList.add("active");
+  circleIcon.classList.add("active");
   player1 = "circle";
-  player2 = "x";
+  player2CPU = "x";
+  console.log(`player1 is ${player1}`);
+  console.log(`player2CPU is ${player2CPU}`);
+  // circleTurn = true;
 });
-// GAME -> solo
-// const player1 = require("./index.js");
-// const player2 = require("./index.js");
 
-console.log(player1);
-console.log(player2);
-
+// GAME
 const x_class = "x";
 const circle_class = "circle";
 const winning_combinations = [
@@ -58,7 +84,7 @@ const winning_combinations = [
 
 const mainGrid = document.getElementById("main-grid");
 const cellElements = document.querySelectorAll("[data-cell]");
-const winningMessageElement = document.querySelector(".modal-container");
+const winningMessageElement = document.querySelector(".game-over-container");
 const restartElement = document.querySelector(".restart-container");
 const winningMessageTextElement = document.querySelector(".modal-heading");
 const restartTextElement = document.querySelector(".restart-heading");
@@ -77,20 +103,20 @@ let winCounter = 0;
 let tieCounter = 0;
 let lossCounter = 0;
 
-// const squareIcons = document.querySelectorAll(".square-icon");
-
-// if true -> o's turn, if false -> x's turn. "let circleTurn" means "circleTurn" is undefined by default.
-let circleTurn;
+// let available = [];
 
 startGame();
 
 function startGame() {
-  circleTurn = false;
+  // circleTurn = false;
   cellElements.forEach((cellElement) => {
     cellElement.classList.remove(x_class);
     cellElement.classList.remove(circle_class);
     cellElement.removeEventListener("click", handleClick);
     cellElement.addEventListener("click", handleClick, { once: true });
+    // cellElement.addEventListener("click", turnClick, { once: true });
+
+    // available.push(cellElement);
   });
   winningMessageElement.classList.remove("show");
   restartElement.classList.remove("show");
@@ -98,6 +124,31 @@ function startGame() {
   turnIcon.classList.add("x-silver");
   setHoverBoardClass();
 }
+
+// function turnClick(cell) {
+//   if (
+//     // !cell.classList.contains(x_class) &&
+//     // !cell.classList.contains(circle_class)
+//   ) {
+//     if (!isDraw()) {
+//       handleClick(e, markFirstSpot(), aiPlayer);
+//     }
+//   }
+// }
+
+// function showEmptySquares() {
+//   return [...cellElements].filter(
+//     (cell) =>
+//       // !cell.classList.contains(x_class) &&
+//       // !cell.classList.contains(circle_class)
+//   );
+// }
+
+// function markFirstSpot() {
+//   console.log(showEmptySquares().length);
+//   console.log(showEmptySquares()[0]);
+//   return showEmptySquares()[0];
+// }
 
 function handleClick(e) {
   cell = e.target;
@@ -114,6 +165,8 @@ function handleClick(e) {
   } else {
     swapTurns();
     setHoverBoardClass();
+    // showEmptySquares();
+    // markFirstSpot();
   }
 
   turnIcon.classList.toggle("circle-silver");
@@ -199,7 +252,6 @@ btnCancel.addEventListener("click", () => {
 btnRestartModal.addEventListener("click", startGame);
 
 // Initial turn choosing
-// player 1 => you. player2 => cpu
 
 // Implement automatic CPU moves
 // Implement more intelligent CPU logic?
